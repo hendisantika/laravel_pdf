@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pegawai;
-use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PegawaiController extends Controller
 {
@@ -18,6 +18,7 @@ class PegawaiController extends Controller
         $pegawai = Pegawai::all();
 
         $pdf = PDF::loadview('pegawai_pdf', ['pegawai' => $pegawai]);
-        return $pdf->download('laporan-pegawai-pdf');
+//        return $pdf->download('laporan-pegawai-pdf');
+        return $pdf->stream();
     }
 }
