@@ -18,6 +18,7 @@ class CreatePegawaisTable extends Migration
             $table->string('nama');
             $table->string('email');
             $table->string('alamat');
+            $table->string('telepon');
             $table->string('pekerjaan');
             $table->timestamps();
         });
